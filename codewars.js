@@ -118,3 +118,22 @@ function disemvowel(str) {
 let vowels = /[aeiou]/gi;
   return str.replace(vowels, "");
 }
+
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+function XO(str) {
+  const matches1 = str.match(/x/gi);
+  const matches2 = str.match(/o/gi);
+      const xCount = matches1 === null ? 0 : matches1.length;
+      const yCount = matches2 === null ? 0 : matches2.length;
+  return xCount === yCount;
+}
